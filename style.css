@@ -118,6 +118,13 @@ header .nav-bar-wrapper .nav-bar ul li{
     cursor: pointer;
     font-weight: 500;
 }
+header .nav-bar-wrapper .menu-icon{
+    font-size: 2em;
+    cursor: pointer;
+    display: none;
+    background: none;
+    border: none;
+}
 header .nav-bar-wrapper .nav-bar ul li:hover{
     color: var(--secondary-text-color);
 }
@@ -149,22 +156,20 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
 }
 .hero .search-wrapper{
     width: 100%;
-    justify-content: space-between;
     padding-top: 60px;
     padding-bottom: 140px;
-    
+    gap: 20px;
 }
-.hero .search-wrapper .form-wrapper {
-    background-color: #fff;
+/* .hero .search-wrapper .form-wrapper {
+
     width: 100%;
-    border-radius: 2px;
     align-items: center;
-}
+} */
 .hero .search-wrapper .form-wrapper .from-container{
     border: 1px solid #f6f8fa;
     padding: 10px;
-    width: 80%;
     text-align: start;
+    background-color: #fff;
 }
 .hero .search-wrapper .form-wrapper .from-container label{
     font-size: 1.6em;
@@ -180,10 +185,7 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
     padding-left:30px ;
 }
 .hero .search-wrapper .btn-Search{
-    margin-left: 50px;
-    padding: 10px 45px;
-    gap: 20px;
-    background-color: var(--secondary-text-color);
+    padding: 0 45px;
     border: none;
     align-items: center;
     color: #fcfcfc;
@@ -197,13 +199,11 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
 .cards-wrapper{
     position: relative;
     padding:var(--padding--) ;
-    gap: 20px;
+    gap: 25px;
     bottom: -60px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
 }
 .cards-wrapper .card-container{
-    padding: 0px 70px;
+    width: 100%;
     text-align: center;
     background-color: #fcfcfc;
     border-radius: 5px;
@@ -244,12 +244,11 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
 }
 .works-wrapper .works-card-wrapper{
     padding: var(--padding--);
-    display: grid;
-    grid-template-columns: auto auto auto;
+    gap: 60px;
     padding-bottom: 90px;
 }
 .works-wrapper .works-card-wrapper .card-work-container{
-    width: 350px;
+    width: 100%;
     padding: 60px 30px;
     display: flex;
     flex-direction: column;
@@ -329,21 +328,25 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
 }
 .explore-wrapper .explore-cards-wrapper{
     padding: var(--padding--);
-    padding-top: 90px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 30px;
 }
 .explore-wrapper .explore-cards-wrapper .explore-card-container{
-    max-width: 371px;
+    max-width: 100%;
     border: 1px solid #edeff1;
     transition: .3s linear;
 }
 .explore-wrapper .explore-cards-wrapper .explore-card-container .explore-card-img{
     position: relative;
-}
-.explore-wrapper .explore-cards-wrapper .explore-card-container .explore-img{
+}.explore-wrapper .explore-cards-wrapper .explore-card-container .explore-img{
     width: 100%;
+    height: 240px;
+}
+.explore-wrapper .explore-cards-wrapper .explore-card-container .explore-img img{
+    width: 100%;
+    height: 100%;
 }
 .explore-wrapper .explore-cards-wrapper .explore-card-container .explore-img-info{
     display: flex;
@@ -387,7 +390,7 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
     color: var(--secondary-text-color);
 }
 .explore-card-container .explore-cards-text{
-    padding: 26px 25px 24px 15px;
+    padding: 25px 15px;
 }
 .explore-card-container .explore-cards-text h6{
     text-transform: capitalize;
@@ -397,6 +400,10 @@ header .nav-bar-wrapper .nav-bar ul li:hover{
     padding-bottom: 10px;
     cursor: auto !important; 
     color: #252d32;
+}
+.explore-card-container .explore-cards-text .explore-rating-price{
+justify-content: center;
+align-items: center;
 }
 .explore-card-container .explore-cards-text .explore-rating-price .rating{
     align-items: center;
@@ -491,11 +498,13 @@ cursor: pointer;
     margin: 100px 0;
 }
 .clients-wrapper .clients-cards-wrapper .client-card-container{
-    display: grid;  
-    grid-template-columns: auto auto auto auto auto; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    /* padding: 20px; */
 }
 .clients-wrapper .clients-cards-wrapper .client-card-container .client-personal-info {
-    width: 250px;
+    width: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 60px 20px;
 }
@@ -571,9 +580,10 @@ cursor: pointer;
 .news-articles-wrapper .news-articles-cards-wrapper{
     display: grid;
     grid-template-columns: auto auto auto;
+    grid-gap:20px ;
 }
 .news-articles-wrapper .new-article-card-container{
-    max-width:350px ;
+    max-width: 100%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transition: .3s linear;
 }
@@ -632,15 +642,21 @@ cursor: pointer;
     font-weight: 500;
     margin-bottom: 30px;
 }
-.subscription-wrapper .sub-creat-acc input{
-    width: 500px;
-    height: 60px;
-    padding: 20px;
+.subscription-wrapper .sub-creat-acc{
+    justify-content: center;
+}
+.subscription-wrapper .sub-creat-acc .input{
     background: var(--text-color);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: none;
     color: var(--primary-text-color);
     position: relative;
+    justify-self: center;
+}
+.subscription-wrapper .sub-creat-acc input{
+    padding: 20px;
+    width: 500px;
+    height: 60px;
+    border: none;
 }
 .subscription-wrapper .sub-creat-acc button{
     height: 60px;
@@ -650,6 +666,8 @@ cursor: pointer;
     background-color: var(--secondary-text-color);
     position: absolute;
     cursor: pointer;
+    right: 0;
+    top: 0;
 }
 footer{
     padding: var(--padding--);
